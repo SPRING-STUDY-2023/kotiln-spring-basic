@@ -1,9 +1,10 @@
 package com.kotlin.demo.controller
 
+import com.kotlin.demo.controller.common.ApiController
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 
-@RestController
+@ApiController
 class HealthCheckController {
 
     @GetMapping("/health")
