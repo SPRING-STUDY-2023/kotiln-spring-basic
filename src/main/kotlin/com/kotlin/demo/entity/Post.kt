@@ -13,6 +13,6 @@ class Post (
         val id: Long,
         @Column(name="title")
         val title: String,
-        @Column(name="content")
+        @Column(name="content", columnDefinition = "TEXT")
         val content: String
 ): BaseEntity()
