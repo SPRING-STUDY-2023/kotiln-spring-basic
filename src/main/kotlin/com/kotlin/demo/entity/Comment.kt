@@ -7,11 +7,11 @@ import jakarta.persistence.*
 @Table(name="comment")
 class Comment (
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+        @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long,
-    @Column(name="writer")
+        @Column(name="writer")
     val writer: String,
-    @ManyToOne(targetEntity = Post::class, fetch = FetchType.LAZY )
+        @ManyToOne(targetEntity = Post::class, fetch = FetchType.LAZY )
     @JoinColumn(name="post_id")
     val post: Post,
         @Column(name="content", columnDefinition = "VARCHAR(255)")
