@@ -15,4 +15,5 @@ class Post (
         val title: String,
         @Column(name="content", columnDefinition = "TEXT")
         val content: String
-): BaseEntity()
+): BaseEntity() {
+}
