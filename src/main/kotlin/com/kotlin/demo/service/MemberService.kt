@@ -1,6 +1,6 @@
 package com.kotlin.demo.service
 
-import com.kotlin.demo.controller.MemberApiController
+import com.kotlin.demo.dto.member.CreateMemberRequest
 import com.kotlin.demo.entity.Member
 import com.kotlin.demo.repository.MemberRepository
 import org.springframework.stereotype.Service
@@ -11,10 +11,10 @@ class MemberService (
         private val memberRepository: MemberRepository
 ){
     @Transactional(readOnly = true)
-    fun createMember(dto: MemberApiController.CreateMemberRequestDto): Member {
+    fun createMember(request: CreateMemberRequest): Member {
         val member =  Member(
-                name = dto.name,
-                age = dto.age
+                name = request.name,
+                age = request.age
         )
 
         return memberRepository.save(member)
